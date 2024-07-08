@@ -6,43 +6,25 @@ let displayValue = null;
 let keyPressed = null;
 let operatorPressed = 0;
 
-function add(first, second) {
-    first = parseInt(first);
-    second = parseInt(second);
-    return first + second;
-}
-
-function subtract(first, second) {
-    return first - second;
-}
-
-function multiply(first, second) {
-    return first * second;
-}
-
-function divide(first, second) {
-    if (second != 0) {
-        return first / second;
-    }
-    else {
-        return msg = "ffs";
-    }
-}
-
 function operate(operation, first, second) {
     if (operation === "+") {
-        return add(first, second);
+        first = parseInt(first);
+        second = parseInt(second);
+        return first + second;
     }
     else if (operation === "-")
-        return subtract(first, second);
+        return first - second;
     else if (operation === "*")
-        return multiply(first, second);
+        return first * second;
     else {
-        return divide(first, second);
+        if (second != 0) {
+            return first / second;
+        }
+        else {
+            return msg = "ffs";
+        }
     }
 }
-
-
 
 function display(input) {
 
